@@ -9,11 +9,12 @@ terraform {
   required_version = ">= 0.14.9"
 }
 
-module "vpc" {
+module "vpc1" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "my-vpc"
+  name = "my-vpc1"
   cidr = "10.0.0.0/16"
+
 
   azs             = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
@@ -27,10 +28,10 @@ module "vpc" {
     Environment = "dev"
   }
 }
-module "vpc" {
+module "vpc2" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "my-vpc"
+  name = "my-vpc2"
   cidr = "10.0.0.0/16"
 
   azs             = ["eu-east-1a", "eu-east-1b", "eu-east-1c"]

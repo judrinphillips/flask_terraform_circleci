@@ -11,3 +11,7 @@ variable "east-availability_zone_names" {
   type    = list(string)
   default = ["us-east-1a"]
 }
+
+variable "region" {
+  type = string
+}
